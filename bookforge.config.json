@@ -1,0 +1,91 @@
+{
+  "$schema": "KDP Author Engine v1.0 — Configuration",
+  "_instructions": "Fill in YOUR details below. Every {{PLACEHOLDER}} in agent files will be replaced with these values during setup. Run setup.sh after editing this file.",
+
+  "author": {
+    "name": "Your Name",
+    "penName": "Your Pen Name (or same as name)",
+    "bio": "Your background, credentials, and expertise that differentiate your books",
+    "edge": "What makes YOU the right person to write in your niches (e.g., 'Licensed pharmacist with 10 years clinical experience')",
+    "website": "",
+    "email": ""
+  },
+
+  "niches": {
+    "categories": [
+      {
+        "name": "Category 1 (e.g., Health & Wellness)",
+        "subNiches": ["Sub-niche 1", "Sub-niche 2"],
+        "targetReaders": "Who reads these books",
+        "yourAngle": "Why you're credible here"
+      },
+      {
+        "name": "Category 2 (e.g., Business & Entrepreneurship)",
+        "subNiches": ["Sub-niche 1", "Sub-niche 2"],
+        "targetReaders": "Who reads these books",
+        "yourAngle": "Why you're credible here"
+      }
+    ],
+    "_note": "Add as many categories as you publish in. Bookfinder will scan all of them."
+  },
+
+  "discord": {
+    "channels": {
+      "bookfinder": "PASTE_CHANNEL_ID_HERE",
+      "author": "PASTE_CHANNEL_ID_HERE",
+      "bookwriter": "PASTE_CHANNEL_ID_HERE",
+      "editor": "PASTE_CHANNEL_ID_HERE",
+      "publisher": "PASTE_CHANNEL_ID_HERE",
+      "marketer": "PASTE_CHANNEL_ID_HERE"
+    },
+    "guildId": "PASTE_YOUR_SERVER_ID_HERE",
+    "ownerId": "PASTE_YOUR_DISCORD_USER_ID_HERE"
+  },
+
+  "models": {
+    "_note": "Customize which AI models each agent uses. Defaults work well for most setups.",
+    "orchestrator": {
+      "_role": "Author agent — pipeline management, planning, approvals",
+      "primary": "openrouter/anthropic/claude-sonnet-4.6",
+      "fallbacks": ["openai-codex/gpt-5.4", "openrouter/nvidia/nemotron-3-super-120b-a12b"]
+    },
+    "researcher": {
+      "_role": "Bookfinder agent — market research, keyword analysis",
+      "primary": "openai-codex/gpt-5.4",
+      "fallbacks": ["openrouter/nvidia/nemotron-3-super-120b-a12b", "openrouter/deepseek/deepseek-chat"]
+    },
+    "writer": {
+      "_role": "Bookwriter agent — creative chapter drafting",
+      "primary": "openrouter/nvidia/nemotron-3-super-120b-a12b",
+      "fallbacks": ["openrouter/google/gemma-4", "openrouter/minimax/minimax-m2.7"]
+    },
+    "editor": {
+      "_role": "Editor agent — quality review, developmental and line editing",
+      "primary": "openrouter/anthropic/claude-sonnet-4.6",
+      "fallbacks": ["openai-codex/gpt-5.4", "openrouter/nvidia/nemotron-3-super-120b-a12b"]
+    },
+    "publisher": {
+      "_role": "Publisher agent — KDP formatting, metadata, upload prep",
+      "primary": "openai-codex/gpt-5.4",
+      "fallbacks": ["openrouter/anthropic/claude-sonnet-4.6", "openrouter/nvidia/nemotron-3-super-120b-a12b"]
+    },
+    "marketer": {
+      "_role": "Marketer agent — launch campaigns, ads, ongoing promotion",
+      "primary": "openai-codex/gpt-5.4",
+      "fallbacks": ["openrouter/anthropic/claude-sonnet-4.6", "openrouter/deepseek/deepseek-chat"]
+    }
+  },
+
+  "output": {
+    "booksDir": "~/BOOKS",
+    "format": "docx",
+    "_note": "All manuscript and publishing files saved here. Pandoc must be installed for .docx conversion."
+  },
+
+  "schedule": {
+    "weeklyResearchDay": "3",
+    "weeklyResearchHour": "09:00",
+    "timezone": "America/New_York",
+    "_note": "Day 0=Sunday, 1=Monday... 6=Saturday. Default: Wednesday at 9 AM ET."
+  }
+}

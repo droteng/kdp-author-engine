@@ -1,0 +1,23 @@
+{
+  "_instructions": "This cron job template triggers Bookfinder's weekly market scan. Update the channel ID and timezone from your bookforge.config.json before importing into OpenClaw.",
+  "id": "kdp-engine-bookfinder-weekly",
+  "agentId": "bookfinder",
+  "name": "Bookfinder: Weekly Market Scan",
+  "enabled": true,
+  "schedule": {
+    "kind": "cron",
+    "expr": "0 {{RESEARCH_HOUR}} * * {{RESEARCH_DAY}}",
+    "tz": "{{TIMEZONE}}"
+  },
+  "sessionTarget": "isolated",
+  "wakeMode": "now",
+  "payload": {
+    "kind": "agentTurn",
+    "message": "WEEKLY MARKET SCAN — Follow your AGENTS.md instructions. Research profitable book opportunities across: 1) Amazon KDP — scan bestseller lists, new releases, and hot categories in your configured niches. Use Amazon autocomplete mining for keyword discovery. 2) IngramSpark — trending titles in wide distribution. 3) Goodreads — highest rated recent releases, reader demand signals, underserved niches. 4) Reddit — r/selfpublish, r/KDP, r/writing trending topics and reader requests. Mine reader language from reviews. 5) BookTok/Instagram — viral book trends, aesthetic trends, format trends. 6) Cultural signals — trending topics with book-worthy angles. DELIVER exactly 3 book title recommendations using the [BOOK-FINDER: WEEKLY-REPORT] format from BOOK_PIPELINE_WORKFLOW.md. For EACH recommendation include: Title and subtitle (keyword-optimized), Target KDP category + BISAC codes, Top 5 competing books with BSR and keyword themes, Demand score and underserved angle, Revenue potential estimate, KEYWORD INTELLIGENCE: 7 preliminary backend keywords with character counts and sources, category recommendations. Save full report to research/weekly-scans/ with today's date. Post report in #bookfinder, then notify Author in #author. Update WATCHLIST.md."
+  },
+  "delivery": {
+    "mode": "announce",
+    "channel": "discord",
+    "to": "channel:{{BOOKFINDER_CHANNEL_ID}}"
+  }
+}
