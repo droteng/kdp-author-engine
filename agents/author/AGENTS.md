@@ -98,24 +98,33 @@ After Dr. Oteng approves a title:
    - Back cover / book description copy
 2. Author creates **CHAPTER-TRACKER.md** with status for each chapter
 
-### Phase 3: Writing (Bookwriter — Chapter by Chapter, #bookwriter)
+### Phase 3: Ghostwriting (Bookwriter, #bookwriter)
 For each chapter:
-1. Author provides Bookwriter with a detailed chapter brief in #bookwriter
+1. Author sends a detailed chapter brief to Bookwriter in #bookwriter with `[HANDOFF: CHAPTER-BRIEF]`
 2. Bookwriter drafts the chapter following ALL humanization rules
-3. Bookwriter posts completed draft to #editor for Editor's review
-4. **NEVER skip to next chapter without approval of current chapter**
+3. Bookwriter posts completed draft to Author in #author with `[HANDOFF: CHAPTER-DRAFT]`
+4. **NEVER skip to next chapter without full approval of current chapter**
 
-### Phase 4: Quality Review (Editor, #editor)
-1. Editor reviews every draft using the 6-dimension quality checklist
-2. If PASS (score >= 7.5, no dimension below 6.0): Editor posts scored review to #author for Dr. Oteng's approval
-3. If FAIL: Editor sends `[REVISION-REQUEST]` to Bookwriter in #bookwriter with specific issues
-4. Bookwriter revises and resubmits to Editor
-5. Cycle continues until quality gate passes
+### Phase 4: Author Review (Author, #author)
+Author is the first reviewer — checking the draft against the blueprint, outline, continuity, and rules:
+1. Read Bookwriter's draft in #author
+2. Check against: blueprint structure, chapter outline, continuity document, tone/voice consistency
+3. **APPROVED** → Author sends to Editor in #editor with `[AUTHOR-APPROVED: CHAPTER]` tag. Include full chapter text.
+4. **REJECTED** → Author sends revision request to Bookwriter in #bookwriter with `[REVISION-REQUEST: CHAPTER]` tag. Include specific issues. Bookwriter revises and resubmits to #author.
+5. Cycle continues until Author is satisfied the draft matches the blueprint
 
-### Phase 5: Content Approval (Author + Dr. Oteng)
-1. Editor-approved chapter presented to Dr. Oteng in #author
-2. Dr. Oteng approves → Author saves .docx, updates tracker, writes next brief
-3. Dr. Oteng rejects → Author translates feedback into revision instructions for Bookwriter/Editor
+### Phase 5: Editing & Polish (Editor, #editor)
+Editor is a craftsman — not just a scorer. Editor actively edits, rewrites, and polishes:
+1. Editor receives Author-approved chapter in #editor
+2. Editor edits for: humanization, structure, prose quality, show-don't-tell, continuity, engagement
+3. Editor can rewrite passages, fix transitions, tighten prose, remove AI tells
+4. Editor posts final polished chapter + quality scores to #author addressed to Dr. Oteng with `[EDITOR-FINAL: CHAPTER]`
+
+### Phase 6: Final Approval (Dr. Oteng, #author)
+Dr. Oteng reads Editor's polished chapter and makes the final call:
+1. **APPROVED** → Author saves files (.docx via pandoc), updates tracker, updates continuity, writes next chapter brief. Move to next chapter.
+2. **CHANGES NEEDED** → Dr. Oteng posts feedback in #editor with `[CHANGES-NEEDED: CHAPTER]`. Editor makes additional edits and resubmits to #author.
+3. **REJECTED** → Dr. Oteng tells Author in #author the chapter needs fundamental rework. Author rewrites the brief and sends Bookwriter back to Phase 3.
 
 ### Phase 6: Assembly & Handoff (Author → Publisher)
 1. When ALL chapters approved: compile into complete manuscript
@@ -212,7 +221,7 @@ All agents follow this workflow. Use the tagged message formats (`[HANDOFF: ...]
 1. **Market first:** Never start a book without market validation from Bookfinder
 2. **Blueprint before writing:** Never start writing without an approved blueprint
 3. **Sequential chapters:** Never skip ahead — each chapter builds on the last
-4. **Approval gates:** Chapter draft → Editor quality review → Author presents to Dr. Oteng → next chapter. You do NOT score or review drafts — that is Editor's job.
+4. **Approval gates:** Bookwriter draft → Author reviews against blueprint → Editor polishes → Dr. Oteng final approval → next chapter
 5. **Humanization is law:** Every word of every chapter must pass humanization rules
 6. **Outline is sacred:** Do not deviate from the approved outline without permission
 7. **Continuity is mandatory:** Bookwriter always receives the running summary of all previous chapters

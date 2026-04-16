@@ -1,4 +1,4 @@
-# Book-Writing Pipeline Workflow & Handoffs — KDP Author Engine
+# Book-Writing Pipeline Workflow & Handoffs
 
 ## Agents & Channels
 
@@ -7,7 +7,7 @@
 | Bookfinder 🔎 | Market research, title discovery, keyword intelligence | `#bookfinder` |
 | Author 📖 | Orchestrator — outlines, blueprints, approvals, saves locally | `#author` |
 | Bookwriter ✍️ | Writes chapter drafts from Author's briefs | `#bookwriter` |
-| Editor ✏️ | Quality review — 6-dimension scoring, developmental editing | `#editor` |
+| Editor ✏️ | Hands-on editing — rewrites, polishes, scores, delivers publishable chapters | `#editor` |
 | Publisher 🚀 | KDP formatting, metadata, upload prep | `#publisher` |
 | Marketer 📣 | Launch campaigns, Amazon Ads, ongoing promotion | `#marketer` |
 
@@ -22,7 +22,7 @@ Author maintains `BOOK-PIPELINE.md` with stages for every active book.
 
 ## Handoff Protocols
 
-### 1. Bookfinder → {{AUTHOR_NAME}} (Weekly)
+### 1. Bookfinder → Dr. Oteng (Weekly)
 **When:** Bookfinder completes weekly title research
 **Where:** Post in `#bookfinder`
 **Format:**
@@ -47,7 +47,7 @@ Market Data:
 
 Demand: <Search volume + evidence>
 Review Gaps: <What readers want that competitors miss>
-{{AUTHOR_NAME}}'s Angle: <How their expertise applies>
+Dr. Oteng's Angle: <How their expertise applies>
 Format: <Ebook / Paperback / Both>
 Est. Word Count: <X,000>
 Revenue Estimate: $<X>/month at <price point>
@@ -65,12 +65,12 @@ Keyword Intelligence:
 [Repeat for Recommendations #2 and #3]
 ---
 
-@{{AUTHOR_NAME}} please review and indicate preferred title or request new options.
+@Dr. Oteng please review and indicate preferred title or request new options.
 ```
 
 ---
 
-### 1b. REJECTION: {{AUTHOR_NAME}} rejects all 3 titles
+### 1b. REJECTION: Dr. Oteng rejects all 3 titles
 **Where:** Reply in `#bookfinder`
 ```text
 [REJECTION: WEEKLY-REPORT]
@@ -82,7 +82,7 @@ Bookfinder updates WATCHLIST.md and adjusts next week.
 ---
 
 ### 2. Bookfinder → Author (Title Approved)
-**When:** {{AUTHOR_NAME}} approves a book title
+**When:** Dr. Oteng approves a book title
 **Where:** Post in `#author`
 **Format:**
 ```text
@@ -104,7 +104,7 @@ KEYWORD INTELLIGENCE PACKAGE:
 
 MARKET CONTEXT:
 - Target audience: <specific reader persona>
-- {{AUTHOR_NAME}}'s angle: <differentiation>
+- Dr. Oteng's angle: <differentiation>
 - Revenue estimate: $<X>/month
 - Top competitor gap: <what's missing>
 - Format: <Ebook / Paperback / Both>
@@ -159,43 +159,34 @@ REFERENCE MATERIALS:
 - Research notes: <key sources>
 - Genre playbook: <which genre>
 
-Post your draft to #editor when complete. Tag @Editor for review.
+Post your draft to #author when complete. Tag @Author for review.
 ```
 
 ---
 
-### 3b. REJECTION: Editor rejects a chapter draft
-**Where:** Editor posts in `#bookwriter`
+### 3b. REJECTION: Author rejects a chapter draft
+**Where:** Author posts in `#bookwriter`
 ```text
 [REVISION-REQUEST: CHAPTER <X>]
 Book: <Book Title>
 Verdict: REVISION NEEDED
 
-Quality Scores:
-- Language Quality: [X]/10
-- Humanization: [X]/10
-- Genre Compliance: [X]/10
-- Engagement: [X]/10
-- Continuity: [X]/10
-- Structure: [X]/10
-- Weighted Average: [X.X]/10
-
 ISSUES (address ALL):
-1. <Specific issue with location>
-2. <Specific issue>
-3. <Specific issue>
+1. <Specific issue — what doesn't match the brief>
+2. <Specific issue — what's off-tone or off-structure>
+3. <Specific issue — what contradicts continuity>
 
 KEEP (do not change):
 - <What worked>
 
-@Bookwriter please revise and resubmit to #editor.
+@Bookwriter please revise and resubmit to #author.
 ```
 
 ---
 
-### 4. Bookwriter → Editor (Draft Complete)
+### 4. Bookwriter → Author (Draft Complete)
 **When:** Bookwriter finishes a chapter draft
-**Where:** Post in `#editor`
+**Where:** Post in `#author`
 **Format:**
 ```text
 [HANDOFF: CHAPTER-DRAFT]
@@ -209,55 +200,95 @@ SELF-REVIEW:
 - Action box included: [check]/[warning]
 - Forward-looking ending: [check]/[warning]
 
-Notes: <areas wanting Editor's attention>
+Notes: <areas wanting attention>
 
-@Editor please review.
+@Author please review.
 ```
 
 ---
 
-### 5. Editor → Author (Chapter Passes Review)
-**When:** Chapter scores >= 7.5 weighted average, no dimension below 6.0
+### 4b. Author → Editor (Chapter Approved by Author)
+**When:** Author reviews draft and it matches blueprint, outline, continuity, and tone
+**Where:** Post in `#editor`
+**Format:**
+```text
+[AUTHOR-APPROVED: CHAPTER <X>]
+Book: <Book Title>
+Chapter <X>: "<Chapter Title>"
+
+This chapter has passed my review against the blueprint and continuity rules.
+Please edit and polish for publication quality — humanization, structure, prose,
+show-don't-tell, continuity, and engagement.
+
+[Full approved chapter text]
+```
+
+---
+
+### 5. Editor → Dr. Oteng (Polished Chapter)
+**When:** Editor finishes editing, rewriting, and polishing the chapter
 **Where:** Post in `#author`
 **Format:**
 ```text
-[REVIEW: CHAPTER <X>]
+[EDITOR-FINAL: CHAPTER <X>]
 Book: <Book Title>
 Chapter <X>: "<Chapter Title>"
-Verdict: PASS
 
-Quality Scores:
-- Language Quality: [X]/10
-- Humanization: [X]/10
-- Genre Compliance: [X]/10
-- Engagement: [X]/10
-- Continuity: [X]/10
-- Structure: [X]/10
-- Weighted Average: [X.X]/10
+## Editor's Quality Report
+| Dimension | Score |
+|-----------|-------|
+| Humanization | [X]/10 |
+| Structure | [X]/10 |
+| Prose Quality | [X]/10 |
+| Show Don't Tell | [X]/10 |
+| Continuity | [X]/10 |
+| Engagement | [X]/10 |
+| **Weighted Average** | **[X.X]/10** |
 
-Strengths: <2-3 specific highlights>
-Minor notes: <optional polish — not blocking>
+## Changes Made
+<Summary of what was changed, rewritten, or polished — specific sections and reasons>
 
-@Author this chapter is ready for {{AUTHOR_NAME}}'s review.
+## Final Chapter Text
+[The complete, polished chapter — ready for Dr. Oteng to read]
+
+@Dr. Oteng this chapter is edited and ready for your final review.
 ```
 
 ---
 
-### 5b. REJECTION: {{AUTHOR_NAME}} rejects a chapter
-**Where:** Reply in `#author`
+### 5b. Dr. Oteng's Decision
+**Where:** Reply in `#author` or `#editor`
+
+**APPROVED:**
+```text
+[APPROVED: CHAPTER <X>]
+```
+Author saves files, updates tracker, writes next brief. Chapter moves toward Publisher.
+
+**CHANGES NEEDED:**
+Dr. Oteng posts in `#editor`:
+```text
+[CHANGES-NEEDED: CHAPTER <X>]
+Book: <Book Title>
+Feedback: <specific changes requested>
+```
+Editor makes the requested changes and resubmits `[EDITOR-FINAL: CHAPTER <X>] (Revised)` to #author.
+
+**REJECTED:**
+Dr. Oteng posts in `#author`:
 ```text
 [REJECTION: CHAPTER <X>]
-Reason: <feedback>
+Reason: <feedback — fundamental issues>
 ```
-Author translates feedback into a `[REVISION-REQUEST]` for Bookwriter in #bookwriter with specific technical instructions.
+Author translates feedback into a `[REVISION-REQUEST]` for Bookwriter in #bookwriter with specific instructions. The chapter re-enters the pipeline at Bookwriter.
 
 ---
 
 ### 6. Author saves approved chapter locally
-**When:** {{AUTHOR_NAME}} approves a chapter
+**When:** Dr. Oteng approves a chapter
 **Actions (all before responding):**
 
-1. Save as .docx: `{{BOOKS_DIR}}/<book-slug>/manuscript/ch<XX>-approved.docx`
+1. Save as .docx: `/Users/leobiz/BOOKS/<book-slug>/manuscript/ch<XX>-approved.docx`
 2. Update CHAPTER-TRACKER.md
 3. Update continuity.md
 4. Write next chapter brief
@@ -266,14 +297,14 @@ Author translates feedback into a `[REVISION-REQUEST]` for Bookwriter in #bookwr
 ```text
 [SAVED: CHAPTER <X>]
 Book: <Book Title>
-File: {{BOOKS_DIR}}/<slug>/manuscript/ch<XX>-approved.docx
+File: /Users/leobiz/BOOKS/<slug>/manuscript/ch<XX>-approved.docx
 Next: Chapter <X+1> brief ready — sending to Bookwriter.
 ```
 
 ---
 
 ### 7. Author → Publisher (Full Manuscript)
-**When:** ALL chapters approved. {{AUTHOR_NAME}} gives final content sign-off.
+**When:** ALL chapters approved. Dr. Oteng gives final content sign-off.
 **Where:** Post in `#publisher`
 **Format:**
 ```text
@@ -282,7 +313,7 @@ Book Title: <Book Title>
 Subtitle: <Subtitle>
 Total Chapters: <Y>
 Total Word Count: ~<X,000>
-Full Manuscript: {{BOOKS_DIR}}/<book-slug>/manuscript/full-manuscript.docx
+Full Manuscript: /Users/leobiz/BOOKS/<book-slug>/manuscript/full-manuscript.docx
 
 KEYWORD INTELLIGENCE (from Bookfinder):
 - 7 Backend Keywords: [list all 7]
@@ -304,7 +335,7 @@ MARKETING INPUTS:
 - Launch timing: <if any preference>
 
 @Publisher please begin formatting, metadata, and upload prep.
-Output to: {{BOOKS_DIR}}/<book-slug>/ready-to-publish/
+Output to: /Users/leobiz/BOOKS/<book-slug>/ready-to-publish/
 ```
 
 ---
@@ -326,10 +357,10 @@ Keyword Intelligence: <link to kdp-metadata.md>
 Description: <link to book-description.md>
 Cover: <link or status>
 
-Files: {{BOOKS_DIR}}/<slug>/ready-to-publish/
+Files: /Users/leobiz/BOOKS/<slug>/ready-to-publish/
 
 @Marketer please execute the launch plan.
-@Author @{{AUTHOR_NAME}} the book is live.
+@Author @Dr. Oteng the book is live.
 ```
 
 ---
@@ -365,7 +396,7 @@ Issues: <any problems needing attention>
 ## Output Protocol — Every Book
 
 ```
-{{BOOKS_DIR}}/<book-title-slug>/
+/Users/leobiz/BOOKS/<book-title-slug>/
   manuscript/                ← Author's domain
     ch01-approved.docx
     ch02-approved.docx
@@ -416,7 +447,7 @@ Marketer uses keywords for Amazon Ads campaigns and SEO
 ## Notes
 - All handoffs are **explicit, tagged Discord messages**
 - Requires **no custom bots or code** — works with OpenClaw Discord today
-- **Humans in the loop** at every approval gate ({{AUTHOR_NAME}})
+- **Humans in the loop** at every approval gate (Dr. Oteng)
 - **Editor adds a quality layer** between writing and approval — catches issues before the human sees them
 - **Marketer extends the pipeline** past publishing into ongoing revenue optimization
 - **Rejection protocols exist for every gate** — no ambiguity when something goes back

@@ -13,10 +13,19 @@ description: >
   "KDP Select", "wide distribution", "book marketing", or any book-related writing or publishing task.
   Covers all genres: health/medical non-fiction, children's books, faith/ministry, AI/technology, literary fiction,
   commercial fiction, self-help, and business books.
+license: "MIT-0"
+requires:
+  binaries:
+    - pandoc
+    - openclaw
+  env:
+    - name: BOOKS_DIR
+      description: "Local directory where manuscript .docx files are saved (e.g. ~/Books)"
+      optional: true
 metadata:
   clawdbot:
     emoji: "📖"
-    homepage: "https://github.com/leobiz/kdp-author-engine"
+    homepage: "https://discord.gg/yGyXDwdHU9"
     files:
       - "references/humanization-rules.md"
       - "references/quality-checklist.md"
@@ -258,7 +267,7 @@ Load `references/book-marketing.md` for this phase.
 
 ## Output Format
 
-All output files saved to `{{BOOKS_DIR}}/[book-slug]/` must be in `.docx` format.
+All output files saved to your configured books directory (set via the BOOKS_DIR env variable or your agent config) must be in `.docx` format.
 
 Convert via pandoc:
 ```bash
