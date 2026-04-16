@@ -17,7 +17,7 @@ Sold as a digital product. Built by Dr. Leo Oteng, PharmD.
 - Agency License: $397 (contact: Builder@oteng.live)
 
 ## Current Version
-v1.0.3 — published on ClawHub (skill + bundle) and GitHub
+v1.0.4 — published on ClawHub (skill + bundle) and GitHub
 
 ## Project Structure
 ```
