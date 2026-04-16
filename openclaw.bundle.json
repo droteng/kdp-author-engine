@@ -1,0 +1,15 @@
+{
+  "name": "kdp-author-engine",
+  "displayName": "KDP Author Engine",
+  "version": "1.0.2",
+  "description": "6-agent AI book writing, publishing & marketing pipeline for OpenClaw.",
+  "hostTargets": ["macos", "linux", "windows-wsl"],
+  "entrypoint": "quickstart.sh",
+  "homepage": "https://oteng.link/kdp-author-engine",
+  "community": "https://discord.gg/yGyXDwdHU9",
+  "license": "Commercial",
+  "author": {
+    "name": "Dr. Leo Oteng",
+    "handle": "droteng"
+  }
+}
